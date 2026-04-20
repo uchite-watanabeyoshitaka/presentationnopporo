@@ -4,10 +4,7 @@
 <meta charset="UTF-8">
 <title>自己理解のポイント - 全校進路ガイダンス</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Noto+Serif+JP:wght@400;700;900&family=M+PLUS+Rounded+1c:wght@700;900&display=swap');
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   html, body {
     width: 100%;
     height: 100%;
@@ -15,7 +12,6 @@
     background: #000;
     cursor: none;
   }
-
   .slide-container {
     width: 100vw;
     height: 100vh;
@@ -24,456 +20,51 @@
     justify-content: center;
     background: #000;
   }
-
   .slide {
     display: none;
-    width: 1280px;
-    height: 720px;
-    position: relative;
-    overflow: hidden;
-    background: #000;
-    transform-origin: center center;
+    max-width: 100vw;
+    max-height: 100vh;
   }
-
   .slide.active {
     display: block;
   }
-
-  /* ========== slide00 ========== */
-  .s00 { font-family: 'Noto Sans JP', sans-serif; }
-  .s00 .bg-image { width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(0.55); }
-  .s00 .overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; display: flex; flex-direction: column; justify-content: center; align-items: center; }
-  .s00 .top-label { font-size: 32px; font-weight: 700; color: #fff; letter-spacing: 8px; margin-bottom: 20px; text-shadow: 2px 2px 6px rgba(0,0,0,0.9); }
-  .s00 .main-title { font-family: 'Noto Serif JP', serif; font-size: 96px; font-weight: 900; color: #fff; letter-spacing: 12px; text-shadow: 4px 4px 10px rgba(0,0,0,1), 0px 0px 20px rgba(0,0,0,0.8); margin-bottom: 10px; }
-  .s00 .title-line { width: 500px; height: 3px; background: linear-gradient(90deg, transparent, #fff, transparent); margin-bottom: 40px; }
-  .s00 .info-area { display: flex; flex-direction: column; align-items: center; gap: 12px; }
-  .s00 .lecturer { font-size: 40px; font-weight: 700; color: #fff; letter-spacing: 4px; text-shadow: 2px 2px 6px rgba(0,0,0,0.9); }
-  .s00 .date-info { font-size: 30px; font-weight: 400; color: #ddd; letter-spacing: 3px; text-shadow: 2px 2px 6px rgba(0,0,0,0.9); }
-  .s00 .school-name { font-size: 28px; font-weight: 700; color: #ccc; letter-spacing: 6px; text-shadow: 2px 2px 6px rgba(0,0,0,0.9); margin-top: 8px; }
-
-  /* ========== slide01 ========== */
-  .s01 { font-family: 'Noto Sans JP', sans-serif; }
-  .s01 .bg-image { width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(0.85); }
-  .s01 .overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; }
-  .s01 .narration-box { position: absolute; top: 28px; right: 32px; background: rgba(0,0,0,0.75); border: 2px solid #ccc; padding: 16px 20px; max-width: 320px; writing-mode: vertical-rl; text-orientation: mixed; font-family: 'Noto Serif JP', serif; font-size: 22px; font-weight: 700; color: #f0f0f0; line-height: 1.8; letter-spacing: 2px; }
-  .s01 .bubble-main { position: absolute; bottom: 180px; left: 50%; transform: translateX(-50%); background: white; border: 3px solid #222; border-radius: 30px; padding: 20px 36px; font-size: 32px; font-weight: 900; color: #222; text-align: center; line-height: 1.5; box-shadow: 4px 4px 0px rgba(0,0,0,0.3); max-width: 600px; }
-  .s01 .bubble-main::after { content: ''; position: absolute; top: -20px; left: 50%; transform: translateX(-50%); border-left: 15px solid transparent; border-right: 15px solid transparent; border-bottom: 22px solid white; }
-  .s01 .bubble-main::before { content: ''; position: absolute; top: -24px; left: 50%; transform: translateX(-50%); border-left: 17px solid transparent; border-right: 17px solid transparent; border-bottom: 24px solid #222; }
-  .s01 .emphasis { color: #C62828; font-size: 38px; }
-  .s01 .bubble-sub { position: absolute; bottom: 80px; left: 50%; transform: translateX(-50%); background: rgba(255,255,255,0.92); border: 2px solid #444; border-radius: 20px; padding: 12px 28px; font-size: 22px; font-weight: 700; color: #444; text-align: center; line-height: 1.5; box-shadow: 3px 3px 0px rgba(0,0,0,0.2); max-width: 550px; }
-
-  /* ========== slide02 ========== */
-  .s02 { font-family: 'Noto Sans JP', sans-serif; background: #111; }
-  .s02 .bg-image { width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(0.7); }
-  .s02 .overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; }
-  .s02 .title { position: absolute; top: 24px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.85); border: 2px solid #aaa; padding: 10px 40px; font-family: 'Noto Serif JP', serif; font-size: 28px; font-weight: 900; color: #f0f0f0; letter-spacing: 4px; text-align: center; }
-  .s02 .voice { position: absolute; background: white; border: 2.5px solid #333; border-radius: 18px; padding: 10px 16px; font-size: 15px; font-weight: 700; color: #222; line-height: 1.45; box-shadow: 3px 3px 0px rgba(0,0,0,0.25); }
-  .s02 .voice::after { content: ''; position: absolute; border: 8px solid transparent; }
-  .s02 .voice-1 { top: 90px; left: 40px; max-width: 340px; }
-  .s02 .voice-1::after { bottom: -16px; left: 30px; border-top-color: white; }
-  .s02 .voice-1::before { content: ''; position: absolute; bottom: -20px; left: 28px; border: 10px solid transparent; border-top-color: #333; }
-  .s02 .voice-2 { top: 85px; right: 40px; max-width: 380px; }
-  .s02 .voice-2::after { bottom: -16px; right: 40px; border-top-color: white; }
-  .s02 .voice-2::before { content: ''; position: absolute; bottom: -20px; right: 38px; border: 10px solid transparent; border-top-color: #333; }
-  .s02 .voice-3 { top: 280px; left: 60px; max-width: 320px; }
-  .s02 .voice-3::after { bottom: -16px; left: 50px; border-top-color: white; }
-  .s02 .voice-3::before { content: ''; position: absolute; bottom: -20px; left: 48px; border: 10px solid transparent; border-top-color: #333; }
-  .s02 .voice-4 { top: 300px; right: 50px; max-width: 360px; }
-  .s02 .voice-4::after { top: -16px; right: 30px; border-bottom-color: white; }
-  .s02 .voice-4::before { content: ''; position: absolute; top: -20px; right: 28px; border: 10px solid transparent; border-bottom-color: #333; }
-  .s02 .voice-5 { bottom: 100px; left: 50%; transform: translateX(-50%); max-width: 440px; text-align: center; }
-  .s02 .voice-5::after { top: -16px; left: 50%; transform: translateX(-50%); border-bottom-color: white; }
-  .s02 .voice-5::before { content: ''; position: absolute; top: -20px; left: 50%; transform: translateX(-50%); border: 10px solid transparent; border-bottom-color: #333; }
-  .s02 .voice .highlight { color: #C62828; font-size: 17px; font-weight: 900; }
-  .s02 .voice .data { color: #1565C0; font-weight: 900; }
-  .s02 .voice .source { font-size: 11px; color: #888; font-weight: 400; display: block; margin-top: 4px; }
-
-  /* ========== slide03 ========== */
-  .s03 { font-family: 'Noto Sans JP', sans-serif; }
-  .s03 .bg-image { width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(0.8); }
-  .s03 .overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; }
-
-  /* ========== slide04 ========== */
-  .s04 { font-family: 'Noto Sans JP', sans-serif; }
-  .s04 .bg-image { width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(0.82); }
-  .s04 .overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; }
-  .s04 .narration-box { position: absolute; top: 30px; right: 36px; background: rgba(0,0,0,0.78); border: 2px solid #ccc; padding: 18px 22px; max-width: 340px; writing-mode: vertical-rl; text-orientation: mixed; font-family: 'Noto Serif JP', serif; font-size: 24px; font-weight: 700; color: #f0f0f0; line-height: 1.9; letter-spacing: 3px; }
-  .s04 .bubble-main { position: absolute; bottom: 100px; left: 50%; transform: translateX(-50%); background: white; border: 3px solid #222; border-radius: 30px; padding: 22px 40px; font-size: 30px; font-weight: 900; color: #222; text-align: center; line-height: 1.6; box-shadow: 4px 4px 0px rgba(0,0,0,0.3); max-width: 650px; }
-  .s04 .bubble-main::after { content: ''; position: absolute; top: -20px; left: 50%; transform: translateX(-50%); border-left: 14px solid transparent; border-right: 14px solid transparent; border-bottom: 22px solid white; }
-  .s04 .bubble-main::before { content: ''; position: absolute; top: -24px; left: 50%; transform: translateX(-50%); border-left: 16px solid transparent; border-right: 16px solid transparent; border-bottom: 24px solid #222; }
-
-  /* ========== slide05 ========== */
-  .s05 { font-family: 'Noto Sans JP', sans-serif; }
-  .s05 .bg-image { width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(0.80); }
-  .s05 .overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; }
-  .s05 .keyword { position: absolute; top: 40px; left: 60px; font-family: 'M PLUS Rounded 1c', sans-serif; font-size: 72px; font-weight: 900; color: #fff; text-shadow: 3px 3px 0px #000, -1px -1px 0px #000, 1px -1px 0px #000, -1px 1px 0px #000; letter-spacing: 8px; }
-  .s05 .keyword span { color: #E74C3C; }
-  .s05 .bubble-main { position: absolute; bottom: 80px; left: 50%; transform: translateX(-50%); background: white; border: 3px solid #222; border-radius: 28px; padding: 20px 36px; font-size: 28px; font-weight: 700; color: #222; text-align: center; line-height: 1.6; box-shadow: 4px 4px 0px rgba(0,0,0,0.3); max-width: 700px; }
-  .s05 .bubble-main::after { content: ''; position: absolute; top: -18px; right: 120px; border-left: 12px solid transparent; border-right: 12px solid transparent; border-bottom: 20px solid white; }
-  .s05 .bubble-main::before { content: ''; position: absolute; top: -22px; right: 118px; border-left: 14px solid transparent; border-right: 14px solid transparent; border-bottom: 22px solid #222; }
-
-  /* ========== slide06 ========== */
-  .s06 { font-family: 'Noto Sans JP', sans-serif; }
-  .s06 .bg-image { width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(0.75); }
-  .s06 .overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; }
-  .s06 .narration-top { position: absolute; top: 32px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.80); border: 2px solid #aaa; padding: 14px 32px; font-family: 'Noto Serif JP', serif; font-size: 28px; font-weight: 700; color: #f0f0f0; text-align: center; letter-spacing: 3px; line-height: 1.6; }
-  .s06 .question { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-family: 'Noto Sans JP', sans-serif; font-size: 36px; font-weight: 900; color: #fff; text-align: center; text-shadow: 2px 2px 0px #000, -1px -1px 0px #000; line-height: 1.7; letter-spacing: 2px; }
-  .s06 .answer { position: absolute; bottom: 100px; left: 50%; transform: translateX(-50%); font-family: 'M PLUS Rounded 1c', sans-serif; font-size: 96px; font-weight: 900; color: #E74C3C; text-align: center; text-shadow: 4px 4px 0px #000, -2px -2px 0px #000; letter-spacing: 16px; }
-  .s06 .answer-sub { position: absolute; bottom: 68px; left: 50%; transform: translateX(-50%); font-size: 24px; font-weight: 700; color: #ddd; text-align: center; letter-spacing: 4px; }
-
-  /* ========== slide08 ========== */
-  .s08 { font-family: 'Noto Sans JP', sans-serif; }
-  .s08 .bg-image { width: 100%; height: 75%; object-fit: cover; object-position: center 20%; display: block; }
-  .s08 .overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; }
-  .s08 .text-area { position: absolute; bottom: 40px; left: 0; right: 0; height: 25%; background: rgba(0,0,0,0.92); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 20px 40px; }
-  .s08 .ruby-text { font-family: 'Noto Serif JP', serif; font-size: 26px; font-weight: 700; color: #aaa; letter-spacing: 18px; text-align: center; }
-  .s08 .sub-text { font-family: 'Noto Serif JP', serif; font-size: 30px; font-weight: 900; color: #f0f0f0; text-align: center; line-height: 1.8; letter-spacing: 4px; }
-  .s08 .sub-text .highlight { color: #F39C12; font-size: 36px; }
-
-  /* ========== slide09 ========== */
-  .s09 { font-family: 'Noto Serif JP', serif; font-weight: 900; color: #fff; }
-  .s09 .line-top { position: absolute; top: 80px; left: 200px; font-size: 56px; letter-spacing: 8px; }
-  .s09 .center-area { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; }
-  .s09 .awai-ruby { font-size: 32px; letter-spacing: 20px; color: #aaa; margin-bottom: 4px; }
-  .s09 .awai-main { font-size: 220px; letter-spacing: 12px; line-height: 1.0; }
-  .s09 .line-bottom { position: absolute; bottom: 60px; right: 50px; font-size: 56px; letter-spacing: 8px; }
-
-  /* ========== slide10 ========== */
-  .s10 { font-family: 'Noto Sans JP', sans-serif; }
-  .s10 .bg-image { width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(0.78); }
-  .s10 .overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; }
-  .s10 .bubble { position: absolute; background: white; border: 3px solid #222; border-radius: 26px; padding: 16px 28px; font-size: 28px; font-weight: 900; color: #222; text-align: center; line-height: 1.5; box-shadow: 3px 3px 0px rgba(0,0,0,0.3); }
-  .s10 .bubble-left { top: 320px; left: 60px; max-width: 420px; }
-  .s10 .bubble-left::after { content: ''; position: absolute; top: -18px; left: 80px; border-left: 12px solid transparent; border-right: 12px solid transparent; border-bottom: 20px solid white; }
-  .s10 .bubble-left::before { content: ''; position: absolute; top: -22px; left: 78px; border-left: 14px solid transparent; border-right: 14px solid transparent; border-bottom: 22px solid #222; }
-  .s10 .bubble-right { top: 320px; right: 40px; max-width: 450px; background: #f0f0f0; }
-  .s10 .bubble-right::after { content: ''; position: absolute; top: -18px; right: 80px; border-left: 12px solid transparent; border-right: 12px solid transparent; border-bottom: 20px solid #f0f0f0; }
-  .s10 .bubble-right::before { content: ''; position: absolute; top: -22px; right: 78px; border-left: 14px solid transparent; border-right: 14px solid transparent; border-bottom: 22px solid #222; }
-  .s10 .bubble-right .cold { color: #888; font-size: 24px; }
-  .s10 .narration { position: absolute; bottom: 60px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.85); border: 2px solid #888; padding: 14px 40px; font-family: 'Noto Serif JP', serif; font-size: 32px; font-weight: 900; color: #aaa; text-align: center; letter-spacing: 6px; }
-
-  /* ========== slide11 ========== */
-  .s11 { font-family: 'Noto Sans JP', sans-serif; }
-  .s11 .bg-image { width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(0.78); }
-  .s11 .overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; }
-  .s11 .bubble { position: absolute; background: white; border: 3px solid #222; border-radius: 26px; padding: 16px 28px; font-size: 28px; font-weight: 900; color: #222; text-align: center; line-height: 1.5; box-shadow: 3px 3px 0px rgba(0,0,0,0.3); }
-  .s11 .bubble-left { top: 16px; left: 30px; max-width: 500px; }
-  .s11 .bubble-left::after { content: ''; position: absolute; bottom: -18px; left: 120px; border-left: 12px solid transparent; border-right: 12px solid transparent; border-top: 20px solid white; }
-  .s11 .bubble-left::before { content: ''; position: absolute; bottom: -22px; left: 118px; border-left: 14px solid transparent; border-right: 14px solid transparent; border-top: 22px solid #222; }
-  .s11 .bubble-right { top: 16px; right: 40px; max-width: 450px; background: #FFFDE7; border-color: #F57F17; }
-  .s11 .bubble-right::after { content: ''; position: absolute; bottom: -18px; right: 80px; border-left: 12px solid transparent; border-right: 12px solid transparent; border-top: 20px solid #FFFDE7; }
-  .s11 .bubble-right::before { content: ''; position: absolute; bottom: -22px; right: 78px; border-left: 14px solid transparent; border-right: 14px solid transparent; border-top: 22px solid #F57F17; }
-  .s11 .narration { position: absolute; bottom: 60px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.85); border: 2px solid #F39C12; padding: 14px 40px; font-family: 'Noto Serif JP', serif; font-size: 32px; font-weight: 900; color: #F39C12; text-align: center; letter-spacing: 6px; }
-
-  /* ========== slide12 ========== */
-  .s12 { font-family: 'Noto Sans JP', sans-serif; }
-  .s12 .bg-image { width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(0.80); }
-  .s12 .overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; }
-  .s12 .narration-top { position: absolute; top: 28px; left: 40px; background: rgba(0,0,0,0.80); border: 2px solid #aaa; padding: 12px 32px; font-family: 'Noto Serif JP', serif; font-size: 28px; font-weight: 700; color: #f0f0f0; text-align: center; letter-spacing: 4px; }
-  .s12 .bubble-main { position: absolute; bottom: 120px; left: 50%; transform: translateX(-50%); background: white; border: 3px solid #222; border-radius: 30px; padding: 22px 40px; font-size: 32px; font-weight: 900; color: #222; text-align: center; line-height: 1.6; box-shadow: 4px 4px 0px rgba(0,0,0,0.3); max-width: 700px; }
-  .s12 .bubble-main::after { content: ''; position: absolute; top: -20px; left: 50%; transform: translateX(-50%); border-left: 14px solid transparent; border-right: 14px solid transparent; border-bottom: 22px solid white; }
-  .s12 .bubble-main::before { content: ''; position: absolute; top: -24px; left: 50%; transform: translateX(-50%); border-left: 16px solid transparent; border-right: 16px solid transparent; border-bottom: 24px solid #222; }
-  .s12 .sub-text { position: absolute; bottom: 60px; left: 50%; transform: translateX(-50%); font-family: 'Noto Serif JP', serif; font-size: 22px; font-weight: 700; color: #ccc; text-align: center; letter-spacing: 3px; text-shadow: 1px 1px 4px rgba(0,0,0,0.8); }
-
-  /* ========== slide13 ========== */
-  .s13 { font-family: 'Noto Sans JP', sans-serif; }
-  .s13 .bg-image { width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(0.75); }
-  .s13 .overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; }
-  .s13 .bubble-main { position: absolute; top: 20px; left: 30px; background: white; border: 4px solid #222; border-radius: 34px; padding: 28px 48px; font-size: 36px; font-weight: 900; color: #222; text-align: center; line-height: 1.5; box-shadow: 5px 5px 0px rgba(0,0,0,0.3); max-width: 550px; }
-  .s13 .bubble-main::after { content: ''; position: absolute; bottom: -22px; right: 60px; left: auto; border-left: 14px solid transparent; border-right: 14px solid transparent; border-top: 24px solid white; }
-  .s13 .bubble-main::before { content: ''; position: absolute; bottom: -26px; right: 58px; left: auto; border-left: 16px solid transparent; border-right: 16px solid transparent; border-top: 26px solid #222; }
-  .s13 .sub-text { position: absolute; bottom: 80px; left: 50%; transform: translateX(-50%); font-family: 'Noto Serif JP', serif; font-size: 26px; font-weight: 700; color: #f0f0f0; text-align: center; line-height: 1.8; letter-spacing: 3px; text-shadow: 2px 2px 6px rgba(0,0,0,0.9); max-width: 700px; }
-
-  /* ========== slide14 ========== */
-  .s14 { font-family: 'Noto Sans JP', sans-serif; }
-  .s14 .bg-image { width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(0.75); }
-  .s14 .overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; }
-  .s14 .bubble-main { position: absolute; top: 14px; left: 30px; background: white; border: 4px solid #222; border-radius: 30px; padding: 24px 44px; font-size: 30px; font-weight: 900; color: #222; text-align: center; line-height: 1.6; box-shadow: 4px 4px 0px rgba(0,0,0,0.3); max-width: 520px; }
-  .s14 .bubble-main::after { content: ''; position: absolute; bottom: -22px; right: 60px; left: auto; border-left: 14px solid transparent; border-right: 14px solid transparent; border-top: 24px solid white; }
-  .s14 .bubble-main::before { content: ''; position: absolute; bottom: -26px; right: 58px; left: auto; border-left: 16px solid transparent; border-right: 16px solid transparent; border-top: 26px solid #222; }
-  .s14 .narration { position: absolute; bottom: 60px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.88); border: 2px solid #888; padding: 16px 36px; font-family: 'Noto Serif JP', serif; font-size: 24px; font-weight: 700; color: #ddd; text-align: center; line-height: 1.8; letter-spacing: 2px; max-width: 700px; }
-
-  /* ========== slide15 ========== */
-  .s15 { font-family: 'Noto Sans JP', sans-serif; }
-  .s15 .bg-image { width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(0.65); }
-  .s15 .overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; }
-  .s15 .letter-box { position: absolute; top: 50%; right: 60px; transform: translateY(-50%); background: rgba(255,255,255,0.95); border: 2px solid #999; border-radius: 8px; padding: 36px 40px; max-width: 560px; font-family: 'Noto Serif JP', serif; font-size: 22px; font-weight: 400; color: #333; line-height: 2.0; letter-spacing: 1px; box-shadow: 6px 6px 20px rgba(0,0,0,0.4); }
-  .s15 .letter-box .greeting { font-size: 20px; color: #666; margin-bottom: 16px; }
-  .s15 .letter-box .emphasis { font-weight: 900; color: #222; }
-  .s15 .letter-box .core { font-size: 24px; font-weight: 900; color: #C62828; margin: 16px 0; }
-  .s15 .letter-box .closing { font-size: 20px; color: #555; margin-top: 16px; border-top: 1px solid #ddd; padding-top: 16px; }
-
-  /* ========== slide16 ========== */
-  .s16 { font-family: 'Noto Sans JP', sans-serif; }
-  .s16 .bg-image { width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(0.60); }
-  .s16 .overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; }
-  .s16 .number { font-family: 'M PLUS Rounded 1c', sans-serif; font-size: 120px; font-weight: 900; color: #F39C12; text-align: center; text-shadow: 4px 4px 0px rgba(0,0,0,0.6); letter-spacing: 12px; }
-  .s16 .number-sub { font-family: 'Noto Sans JP', sans-serif; font-size: 26px; font-weight: 700; color: #ddd; text-align: center; letter-spacing: 6px; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); }
-  .s16 .message { margin-top: 24px; font-family: 'Noto Serif JP', serif; font-size: 28px; font-weight: 900; color: #f0f0f0; text-align: center; line-height: 1.9; letter-spacing: 3px; text-shadow: 2px 2px 6px rgba(0,0,0,0.9); max-width: 700px; }
-
-  /* ========== footer (shared) ========== */
-  .footer { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.7); color: #888; text-align: right; padding: 8px 20px; font-size: 13px; letter-spacing: 1px; }
-  .s08 .footer { color: #666; }
-
-  /* ========== slide counter ========== */
+  .slide img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+    display: block;
+  }
   .slide-counter {
     position: fixed;
     bottom: 8px;
     left: 20px;
     color: #555;
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: sans-serif;
     font-size: 14px;
     z-index: 9999;
     pointer-events: none;
-  }
-
-  /* ========== scaling ========== */
-  @media screen {
-    .slide {
-      transform: scale(var(--scale, 1));
-    }
   }
 </style>
 </head>
 <body>
 
 <div class="slide-container" id="container">
-
-  <!-- ===== SLIDE 0: 表紙 ===== -->
-  <div class="slide s00 active" data-slide="0">
-    <img class="bg-image" src="slide00_bg.png" alt="表紙">
-    <div class="overlay">
-      <div class="top-label">全校進路ガイダンス</div>
-      <div class="main-title">自己理解のポイント</div>
-      <div class="title-line"></div>
-      <div class="info-area">
-        <div class="lecturer">㈱USTORY　渡部 由貴</div>
-        <div class="date-info">2026年4月21日（火）6校時</div>
-        <div class="school-name">北海道野幌高等学校</div>
-      </div>
-    </div>
-    <div class="footer">USTORY × 野幌高校 ｜ 全校進路ガイダンス 2026.4.21</div>
-  </div>
-
-  <!-- ===== SLIDE 1: 掴み ===== -->
-  <div class="slide s01" data-slide="1">
-    <img class="bg-image" src="slide01_bg.png" alt="体育館シーン">
-    <div class="overlay">
-      <div class="narration-box">300人の視線が、一斉にこちらを向いた。</div>
-      <div class="bubble-main">...実は僕、<span class="emphasis">人見知り</span>なんです。</div>
-      <div class="bubble-sub">なので——ちょっと、助けてもらっていいですか？</div>
-      <div class="footer">USTORY × 野幌高校 ｜ 全校進路ガイダンス 2026.4.21</div>
-    </div>
-  </div>
-
-  <!-- ===== SLIDE 2: 世論の声 ===== -->
-  <div class="slide s02" data-slide="2">
-    <img class="bg-image" src="slide02_bg.png" alt="世論の声">
-    <div class="overlay">
-      <div class="title">「自己理解」に対する世論の声</div>
-      <div class="voice voice-1">
-        <span class="highlight">「内省すれば自分がわかる」は嘘。</span><br>
-        内省の量と自己認識の精度に<br>相関がないことが研究で判明。
-        <span class="source">— ターシャ・ユーリック『insight』</span>
-      </div>
-      <div class="voice voice-2">
-        経験してないのに適性を判断しろ？<br>
-        <span class="highlight">キャリアの80%は予期しない出来事</span>で決まる。<br>
-        「考えてわかれ」は矛盾してる。
-        <span class="source">— クランボルツ「計画的偶発性理論」</span>
-      </div>
-      <div class="voice voice-3">
-        適性検査の結果＝自分？<br>
-        <span class="highlight">「これが自分だ」と固定する</span>のは<br>
-        むしろ成長を止めるリスク。
-        <span class="source">— ドゥエック「マインドセット理論」</span>
-      </div>
-      <div class="voice voice-4">
-        「長所を書きましょう」→書けない→<span class="highlight">自己否定の連鎖。</span><br>
-        日本の高校生の自己肯定感は<span class="data">44.9%</span>。<br>
-        米国<span class="data">83.8%</span>と比べ<span class="highlight">著しく低い</span>。
-        <span class="source">— 日本青少年研究所 2016年調査</span>
-      </div>
-      <div class="voice voice-5">
-        自己理解が<span class="highlight">個人の内面に閉じている</span>。<br>
-        社会的文脈——<span class="highlight">人との関係</span>が無視されている。
-        <span class="source">— 社会構成主義的キャリア理論</span>
-      </div>
-      <div class="footer">USTORY × 野幌高校 ｜ 全校進路ガイダンス 2026.4.21</div>
-    </div>
-  </div>
-
-  <!-- ===== SLIDE 3: 力説 ===== -->
-  <div class="slide s03" data-slide="3">
-    <img class="bg-image" src="slide03_bg.png" alt="力説するシーン">
-    <div class="overlay">
-      <svg style="position:absolute; top:0; left:0; width:1280px; height:720px;" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
-        <ellipse cx="180" cy="210" rx="155" ry="185" fill="white" stroke="#222" stroke-width="2.5"/>
-        <path d="M 320,300 L 380,360 L 305,320 Z" fill="white" stroke="#222" stroke-width="2.5" stroke-linejoin="round"/>
-        <ellipse cx="180" cy="210" rx="153" ry="183" fill="white" stroke="none"/>
-        <text x="180" y="120" font-family="'Noto Sans JP', sans-serif" font-weight="900" font-size="28" text-anchor="middle">
-          <tspan fill="#C62828">本当にできること</tspan><tspan fill="#222">は</tspan>
-        </text>
-        <text x="180" y="175" font-family="'Noto Sans JP', sans-serif" font-weight="900" font-size="28" fill="#222" text-anchor="middle">本人が</text>
-        <text x="180" y="230" font-family="'Noto Sans JP', sans-serif" font-weight="900" font-size="28" fill="#1565C0" text-anchor="middle">意識していないこと</text>
-        <text x="180" y="285" font-family="'Noto Sans JP', sans-serif" font-weight="900" font-size="28" fill="#222" text-anchor="middle">の中にある</text>
-        <ellipse cx="210" cy="580" rx="185" ry="55" fill="white" stroke="#222" stroke-width="2.5"/>
-        <path d="M 380,545 L 420,510 L 370,540 Z" fill="white" stroke="#222" stroke-width="2.5" stroke-linejoin="round"/>
-        <ellipse cx="210" cy="580" rx="183" ry="53" fill="white" stroke="none"/>
-        <text x="210" y="573" font-family="'Noto Sans JP', sans-serif" font-weight="900" font-size="18" fill="#222" text-anchor="middle">意識して「できる」と思ってることは</text>
-        <text x="210" y="600" font-family="'Noto Sans JP', sans-serif" font-weight="900" font-size="22" fill="#C62828" text-anchor="middle">本当の強みじゃない</text>
-      </svg>
-      <div class="footer">USTORY × 野幌高校 ｜ 全校進路ガイダンス 2026.4.21</div>
-    </div>
-  </div>
-
-  <!-- ===== SLIDE 4: 姿見導入 ===== -->
-  <div class="slide s04" data-slide="4">
-    <img class="bg-image" src="slide04_bg.png" alt="オーダースーツ店の姿見">
-    <div class="overlay">
-      <div class="narration-box">僕、オーダースーツの事業もやってるんですけど——</div>
-      <div class="bubble-main">スーツを作る前に、<br>まず<span style="color:#C62828;font-size:38px;">あるもの</span>を<br>買ってもらうんですよ。</div>
-    </div>
-    <div class="footer">USTORY × 野幌高校 | 全校進路ガイダンス 2026.4.21</div>
-  </div>
-
-  <!-- ===== SLIDE 5: 姿見核心 ===== -->
-  <div class="slide s05" data-slide="5">
-    <img class="bg-image" src="slide05_bg.png" alt="姿見のクローズアップ">
-    <div class="overlay">
-      <div class="keyword">「<span>姿見</span>」です。</div>
-      <div class="bubble-main">自分の姿を毎日見る環境がなかったら、<br>どんないいスーツ着ても<span style="color:#C62828;font-weight:900;">意味ないんですよ。</span></div>
-    </div>
-    <div class="footer">USTORY × 野幌高校 | 全校進路ガイダンス 2026.4.21</div>
-  </div>
-
-  <!-- ===== SLIDE 6: 転換「人」 ===== -->
-  <div class="slide s06" data-slide="6">
-    <img class="bg-image" src="slide06_bg.png" alt="姿見と向かい合う高校生">
-    <div class="overlay">
-      <div class="narration-top">見えてないものは、直せない。</div>
-      <div class="question">じゃあ、自分の<span style="color:#F39C12;">内面</span>を<br>映す鏡って何？</div>
-      <div class="answer">「人」</div>
-      <div class="answer-sub">です。</div>
-    </div>
-    <div class="footer">USTORY × 野幌高校 | 全校進路ガイダンス 2026.4.21</div>
-  </div>
-
-  <!-- ===== SLIDE 7 (= slide08): 人間＝あわい ===== -->
-  <div class="slide s08" data-slide="7">
-    <img class="bg-image" src="slide08_bg.png" alt="人間">
-    <div class="overlay">
-      <div class="text-area">
-        <div class="ruby-text">ひと と ひと の「あわい」</div>
-        <div class="sub-text">
-          自己理解の答えは、自分の中にはない。<br>
-          人と人の、<span class="highlight">あわい</span>にある。
-        </div>
-      </div>
-    </div>
-    <div class="footer">USTORY × 野幌高校 | 全校進路ガイダンス 2026.4.21</div>
-  </div>
-
-  <!-- ===== SLIDE 8 (= slide09): キーメッセージ ===== -->
-  <div class="slide s09" data-slide="8">
-    <div class="line-top">すべては、</div>
-    <div class="center-area">
-      <div class="awai-ruby">あわい</div>
-      <div class="awai-main">間</div>
-    </div>
-    <div class="line-bottom">に詰まっている。</div>
-    <div class="footer">USTORY × 野幌高校 | 全校進路ガイダンス 2026.4.21</div>
-  </div>
-
-  <!-- ===== SLIDE 9 (= slide10): できるよ→すごいね ===== -->
-  <div class="slide s10" data-slide="9">
-    <img class="bg-image" src="slide10_bg.png" alt="できるよ→すごいね">
-    <div class="overlay">
-      <div class="bubble bubble-left">俺、これ<span style="color:#2E86C1;font-size:34px;">できるよ！</span></div>
-      <div class="bubble bubble-right"><span class="cold">あ、そうなんだ。すごいね。</span></div>
-      <div class="narration">——で、終わる。</div>
-    </div>
-    <div class="footer">USTORY × 野幌高校 | 全校進路ガイダンス 2026.4.21</div>
-  </div>
-
-  <!-- ===== SLIDE 10 (= slide11): できない→やってあげる ===== -->
-  <div class="slide s11" data-slide="10">
-    <img class="bg-image" src="slide11_bg.png" alt="できない→やってあげる">
-    <div class="overlay">
-      <div class="bubble bubble-left">俺、これ<span style="color:#C62828;font-size:34px;">できない</span>んだ。<br>お願いできない？</div>
-      <div class="bubble bubble-right"><span style="color:#E65100;font-size:34px;">いいよ！</span>一緒にやろう！</div>
-      <div class="narration">——相手の心が、動く。</div>
-    </div>
-    <div class="footer">USTORY × 野幌高校 | 全校進路ガイダンス 2026.4.21</div>
-  </div>
-
-  <!-- ===== SLIDE 11 (= slide12): 弱みを出すと強みが残る ===== -->
-  <div class="slide s12" data-slide="11">
-    <img class="bg-image" src="slide12_bg.png" alt="弱みを手放すと強みが残る">
-    <div class="overlay">
-      <div class="narration-top">苦手なことを手放すと——</div>
-      <div class="bubble-main">残ったものが、<br><span style="color:#C62828;font-size:40px;">あなたの本当の強み</span>なんですよ。</div>
-      <div class="sub-text">弱みが見えると、強みが必然的に輝く。</div>
-    </div>
-    <div class="footer">USTORY × 野幌高校 | 全校進路ガイダンス 2026.4.21</div>
-  </div>
-
-  <!-- ===== SLIDE 12 (= slide13): 苦手に囲まれる人生、嫌じゃん ===== -->
-  <div class="slide s13" data-slide="12">
-    <img class="bg-image" src="slide13_bg.png" alt="苦手に囲まれる人生は嫌じゃん">
-    <div class="overlay">
-      <div class="bubble-main">苦手に囲まれる人生、<br><span style="color:#C62828;font-size:50px;">嫌じゃん。</span></div>
-      <div class="sub-text">だから、苦手は人に頼っていい。<br>頼った分だけ、自分の得意が残る。</div>
-    </div>
-    <div class="footer">USTORY × 野幌高校 | 全校進路ガイダンス 2026.4.21</div>
-  </div>
-
-  <!-- ===== SLIDE 13 (= slide14): 仮のものさしを握れ ===== -->
-  <div class="slide s14" data-slide="13">
-    <img class="bg-image" src="slide14_bg.png" alt="仮のものさしを握れ">
-    <div class="overlay">
-      <div class="bubble-main">仮でいい。<br>今日の自分のものさしを、<br><span style="color:#C62828;font-size:36px;">一つ握って帰れ。</span></div>
-      <div class="narration">合ってなかったら手放していい。<br>また握り直せばいい。<br>僕もまだ、握り直してる途中だから。</div>
-    </div>
-    <div class="footer">USTORY × 野幌高校 | 全校進路ガイダンス 2026.4.21</div>
-  </div>
-
-  <!-- ===== SLIDE 14 (= slide15): 自己開示の手紙 ===== -->
-  <div class="slide s15" data-slide="14">
-    <img class="bg-image" src="slide15_bg.png" alt="自己開示の手紙">
-    <div class="overlay">
-      <div class="letter-box">
-        <div class="greeting">初めまして。</div>
-        <span class="emphasis">人見知りで口下手で怖がり</span>な渡部です。<br><br>
-        自分が何を苦手としているか、<br>
-        何を大切にできる人なのかを<br>
-        一緒に見つけてあげること。<br>
-        <div class="core">僕はそこに人生を捧げています。</div>
-        <div class="closing">
-          無理に全部自分で抱えなくていい。<br>
-          弱みが見えると、<br>
-          強みが必然的に輝くから。
-        </div>
-      </div>
-    </div>
-    <div class="footer">USTORY × 野幌高校 | 全校進路ガイダンス 2026.4.21</div>
-  </div>
-
-  <!-- ===== SLIDE 15 (= slide16): 24369 + 締め ===== -->
-  <div class="slide s16" data-slide="15">
-    <img class="bg-image" src="slide16_bg.png" alt="体育館全景・エンディング">
-    <div class="overlay">
-      <div class="number">24369</div>
-      <div class="number-sub">24時間 365日 ＋ 幸せ</div>
-      <div class="message">
-        苦手に押されることなく、<br>
-        自分の強みで歩いていける。<br><br>
-        そんな未来を、一緒につくろう。
-      </div>
-    </div>
-    <div class="footer">USTORY × 野幌高校 | 全校進路ガイダンス 2026.4.21</div>
-  </div>
-
+  <div class="slide active" data-slide="0"><img src="スライドPNG/スライド01.png" alt="表紙"></div>
+  <div class="slide" data-slide="1"><img src="スライドPNG/スライド02.png" alt="掴み"></div>
+  <div class="slide" data-slide="2"><img src="スライドPNG/スライド03.png" alt="世論の声"></div>
+  <div class="slide" data-slide="3"><img src="スライドPNG/スライド04.png" alt="力説"></div>
+  <div class="slide" data-slide="4"><img src="スライドPNG/スライド05.png" alt="姿見の導入"></div>
+  <div class="slide" data-slide="5"><img src="スライドPNG/スライド06.png" alt="姿見の核心"></div>
+  <div class="slide" data-slide="6"><img src="スライドPNG/スライド07.png" alt="内面の鏡は人"></div>
+  <div class="slide" data-slide="7"><img src="スライドPNG/スライド08.png" alt="人間＝あわい"></div>
+  <div class="slide" data-slide="8"><img src="スライドPNG/スライド09.png" alt="キーメッセージ"></div>
+  <div class="slide" data-slide="9"><img src="スライドPNG/スライド10.png" alt="できるよ→すごいね"></div>
+  <div class="slide" data-slide="10"><img src="スライドPNG/スライド11.png" alt="できない→やってあげる"></div>
+  <div class="slide" data-slide="11"><img src="スライドPNG/スライド12.png" alt="弱みを出すと強みが残る"></div>
+  <div class="slide" data-slide="12"><img src="スライドPNG/スライド13.png" alt="苦手に囲まれる人生嫌じゃん"></div>
+  <div class="slide" data-slide="13"><img src="スライドPNG/スライド14.png" alt="仮のものさしを握れ"></div>
+  <div class="slide" data-slide="14"><img src="スライドPNG/スライド15.png" alt="自己開示の手紙"></div>
+  <div class="slide" data-slide="15"><img src="スライドPNG/スライド16.png" alt="24369+締め"></div>
 </div>
 
 <div class="slide-counter" id="counter">1 / 16</div>
@@ -490,15 +81,6 @@
     current = Math.max(0, Math.min(n, total - 1));
     slides[current].classList.add('active');
     counter.textContent = (current + 1) + ' / ' + total;
-  }
-
-  function fitScale() {
-    const sw = window.innerWidth / 1280;
-    const sh = window.innerHeight / 720;
-    const scale = Math.min(sw, sh);
-    slides.forEach(s => {
-      s.style.transform = 'scale(' + scale + ')';
-    });
   }
 
   document.addEventListener('keydown', function(e) {
@@ -524,16 +106,12 @@
   });
 
   container.addEventListener('click', function(e) {
-    const x = e.clientX;
-    if (x > window.innerWidth / 2) {
+    if (e.clientX > window.innerWidth / 2) {
       showSlide(current + 1);
     } else {
       showSlide(current - 1);
     }
   });
-
-  window.addEventListener('resize', fitScale);
-  fitScale();
 </script>
 
 </body>
